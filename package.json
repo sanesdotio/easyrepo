@@ -1,0 +1,26 @@
+{
+  "name": "easyrepo",
+  "version": "1.0.0",
+  "description": "Easy Git repository setup in one step",
+  "main": "main.ts",
+  "bin": {
+    "easyrepo": "dist/main.js"
+  },
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "build": "pkg . --targets node20-macos-x64 --output exes/easyrepo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.7.6",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0",
+    "@octokit/rest": "^21.0.2",
+    "simple-git": "^3.27.0"
+  }
+}
