@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 
-console.log('EasyRepo: Hello World!');
+import { authToken } from 'src/auth.ts';
+
+const main = async () => {
+  const token = await authToken();
+  console.log(`main.ts auth token: ${token}`);
+};
+
+main();
