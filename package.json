@@ -8,8 +8,9 @@
     "easyrepo": "dist/main.js"
   },
   "scripts": {
-    "dev": "tsx --env-file=.env src/main.ts",
+    "dev": "tsx src/main.ts",
     "build": "./node_modules/.bin/esbuild src/main.ts --bundle --platform=node --format=cjs --outfile=dist/main.cjs",
+    "run-build": "node dist/main.cjs",
     "export": "pkg dist/main.cjs --targets node20-macos-x64 --output exes/easyrepo"
   },
   "keywords": [],
@@ -27,6 +28,8 @@
   },
   "dependencies": {
     "@inquirer/prompts": "^7.0.0",
+    "@octokit/auth-oauth-device": "^7.1.1",
+    "@octokit/core": "^6.1.2",
     "@octokit/rest": "^21.0.2",
     "open": "^10.1.0",
     "simple-git": "^3.27.0"
