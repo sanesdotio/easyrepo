@@ -1,7 +1,8 @@
 import { request } from 'node:https';
-import open from 'open';
+import { exec } from 'node:child_process';
 
-import { clientId } from 'env.ts';
+// Public Client ID of the GitHub Oath app, not meant to be secret
+const clientId = 'Ov23liFhIcWrT9HuEqgo';
 
 export const authToken = async (): Promise<string> => {
   const options = {
@@ -37,11 +38,12 @@ export const authToken = async (): Promise<string> => {
               `To authenticate with GitHub, please visit ${data.verification_uri}, and enter the following code: ${data.user_code}`
             );
 
-            await open(data.verification_uri);
+            exec(`open ${data.verification_uri}`);
 
             const token = await getToken(data.device_code, data.interval);
             resolve(token);
           } else {
+            console.log(data);
             reject(new Error(data.error));
           }
         } catch (error) {
@@ -76,7 +78,7 @@ const getToken = async (
   };
 
   const postData = JSON.stringify({
-    client_id: process.env.CLIENT_ID,
+    client_id: clientId,
     device_code: deviceCode,
     grant_type: 'urn:ietf:params:oauth:grant-type:device_code',
   });

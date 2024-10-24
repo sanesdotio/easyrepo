@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { authToken } from 'src/auth.ts';
+import { authToken } from './auth.ts';
 
 const main = async () => {
   const token = await authToken();
