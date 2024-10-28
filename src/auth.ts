@@ -9,7 +9,7 @@ function hasAccessToken() {
   return fs.existsSync(accessTokenFile);
 }
 
-function getAccessToken() {
+function getAccessTokenFromFile() {
   if (hasAccessToken()) {
     return fs.readFileSync(accessTokenFile, 'utf8');
   } else {
@@ -17,7 +17,7 @@ function getAccessToken() {
   }
 }
 
-let accessToken = getAccessToken();
+let accessToken = getAccessTokenFromFile();
 
 export function clearAccessToken() {
   if (hasAccessToken()) {
