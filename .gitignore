@@ -1,1 +1,6 @@
 # This is a .gitignore file
+.DS_Store
+access_token.txt
+dist/
+exes/
+node_modules/
