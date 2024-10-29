@@ -98,8 +98,11 @@ const main = async () => {
       if (repoData?.html_url) {
         console.log('Initializing local repository...');
         await git.init();
+        const remoteRepoName = await input({
+          message: 'Remote repository name: ',
+        });
         console.log('Connecting remote repository...');
-        await git.addRemote('origin', repoData.html_url);
+        await git.addRemote(remoteRepoName, repoData.html_url);
         console.log('Cloning repository...');
         await git.clone(repoData.html_url);
       }
