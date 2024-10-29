@@ -1,5 +1,1 @@
-.DS_Store
-node_modules
-dist
-exes
-access_token.txt
+# This is a .gitignore file
