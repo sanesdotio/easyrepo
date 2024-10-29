@@ -3,7 +3,7 @@
 # Configuration
 REPO_OWNER="sanesdotio"
 REPO_NAME="easyrepo"
-EXECUTABLE_NAME="easyrepo-pkg"
+EXECUTABLE_NAME="easyrepo"
 INSTALL_DIR="/usr/local/bin"
 
 # Fetch the latest release information
